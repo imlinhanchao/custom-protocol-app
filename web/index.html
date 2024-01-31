@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Protocol Sample Web</title>
+  <script src="js/custom-protocol-check.min.js"></script>
+</head>
+<body>
+  <article>
+    <header>
+      <h1>Custom Protocol Sample Web</h1>
+    </header>
+    <main>
+      <p>
+        <label for="path">Path</label>
+        <select id="path">
+          <option value="form1">Form1</option>
+          <option value="form1/123/somekey">Form1 With Id and Key</option>
+        </select>
+      </p>
+      <p>
+        <label for="query">Query</label>
+        <input type="text" id="query" value="key=value">
+      </p>
+      <p>
+        <button id="open">Open</button>
+        <button id="ping">Ping</button>
+      </p>
+      <p>
+        <label for="result">WebSocket Recv</label> <br/>
+        <textarea id="result" cols="30" rows="10"></textarea>
+      </p>
+      <p>
+        <label for="file">Open File</label>
+        <input type="file" id="file">
+      </p>
+      <p>
+        <label for="save">Save Path</label>
+        <input type="text" id="save" value="C:\Protocol">
+      </p>
+    </main>
+  </article>
+  <script src="js/main.js"></script>
+</body>
+</html>
