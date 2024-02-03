@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Routing;
 
 namespace ProtocolApp
 {
@@ -49,7 +50,7 @@ namespace ProtocolApp
         {
             Route route = new Route();
             var urls = url.Substring(url.IndexOf("://") + 2).Split('?');
-            route.fullPath = urls[0];
+            route.fullPath = new Regex(@"/+$").Replace(urls[0], "");
             var paramRegex = new Regex(@"/:\w+");
 
             for (int i = 0; i < routes.Length; i++)
@@ -57,7 +58,7 @@ namespace ProtocolApp
                 RouteMeta routeMeta = routes[i];
 
                 // 全匹配路由
-                if (routeMeta.path == url)
+                if (routeMeta.path == route.fullPath)
                 {
                     route.name = routeMeta.name;
                     route.meta = routeMeta.meta;
